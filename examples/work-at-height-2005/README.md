@@ -1,0 +1,3 @@
+# Work at Height 2005 example
+
+This example is a full regulation page expressed as JSON and designed to validate against `schemas/regulation-page.schema.json`. It uses public HSE guidance on the Work at Height Regulations 2005 because the source material is well documented, openly accessible, and representative of the regulatory page type this repository is designed to model. From the repository root, validate it with `ajv validate -s schemas/regulation-page.schema.json -d examples/work-at-height-2005/content.json`. The example is deliberately concrete: it proves the schema is not theoretical, while keeping the content safely grounded in official public guidance rather than any client material in this repository today.

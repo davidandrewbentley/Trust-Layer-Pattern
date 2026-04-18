@@ -1,0 +1,139 @@
+{
+  "slug": "work-at-height-regulations-2005",
+  "title": "Work at Height Regulations 2005: what dutyholders need to know",
+  "kicker": "Work at Height Regulations 2005",
+  "last_updated": "2026-04-17",
+  "reviewed_by": {
+    "name": "Sarah Thompson",
+    "title": "Chartered Safety Practitioner",
+    "credentials": "CMIOSH",
+    "organisation": "Thompson Safety Advisory"
+  },
+  "summary": "The Work at Height Regulations 2005 apply wherever a person could fall a distance liable to cause personal injury. Dutyholders must plan and supervise the work, use competent people, assess the risk, choose suitable equipment, follow the hierarchy of controls, and keep inspection and rescue arrangements proportionate to the task.",
+  "body_sections": [
+    {
+      "heading": "Who does this apply to?",
+      "paragraphs": [
+        "The Regulations apply to employers and to anyone who controls work at height, including contractors, facilities managers, and building owners who commission work. HSE's guidance makes the scope practical: if the task involves a risk of a fall liable to cause personal injury, the duties are in play even when the work is short in duration or takes place at relatively low height.",
+        "That breadth matters because many failures come from informal assumptions that a task is too minor to count. The trust-first framing here is simple: if a person could fall and be hurt, the work should be planned as work at height rather than treated as routine access."
+      ],
+      "citations": [
+        "HSE-WAH-INDEX",
+        "HSE-WAH-LAW",
+        "HSE-WAH-FAQ"
+      ]
+    },
+    {
+      "heading": "The hierarchy of controls",
+      "paragraphs": [
+        "HSE's brief guide expresses the hierarchy in plain language: avoid work at height where reasonably practicable, prevent falls where work at height cannot be avoided, and minimise the distance and consequences of a fall where residual risk remains. That hierarchy is not a suggestion to decorate a risk assessment. It is the decision order that should govern equipment choice and task design.",
+        "The guide also reinforces a second principle that often gets diluted in generic advice: collective protection comes before personal protection. In practice, that means favouring guarded platforms, scaffolds, or other systems that protect everyone before defaulting to harnesses or individual restraint measures."
+      ],
+      "citations": [
+        "HSE-INDG401-PDF",
+        "HSE-WAH-INTRO",
+        "HSE-WAH-MYTHS"
+      ]
+    },
+    {
+      "heading": "Planning, competence, and common misconceptions",
+      "paragraphs": [
+        "HSE's law and FAQ material place planning, supervision, competence, and suitable equipment at the centre of compliance. Low-risk tasks may need lighter planning, but they do not remove the duty to think through access, stability, inspection, falling objects, weather, and rescue. The question is not whether the work feels routine. The question is whether the controls are proportionate and defensible.",
+        "One of the most persistent misconceptions is that ladders are banned. HSE explicitly rejects that claim. Ladders and stepladders can be appropriate for low-risk, short-duration work when the risk assessment supports them and workers are competent to use them. Misstating that point pushes teams toward performative compliance instead of sensible control selection."
+      ],
+      "citations": [
+        "HSE-WAH-LAW",
+        "HSE-WAH-FAQ",
+        "HSE-WAH-MYTHS",
+        "HSE-INDG401-HTML"
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "label": "HSE-WAH-INDEX",
+      "url": "https://www.hse.gov.uk/work-at-height/index.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "Includes ... the law, frequently asked questions"
+    },
+    {
+      "label": "HSE-WAH-LAW",
+      "url": "https://www.hse.gov.uk/work-at-height/the-law.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "properly planned, supervised and carried out"
+    },
+    {
+      "label": "HSE-WAH-FAQ",
+      "url": "https://www.hse.gov.uk/work-at-height/faqs.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "where there is risk of a fall"
+    },
+    {
+      "label": "HSE-WAH-INTRO",
+      "url": "https://www.hse.gov.uk/work-at-height/introduction.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "use the right type of equipment"
+    },
+    {
+      "label": "HSE-WAH-MYTHS",
+      "url": "https://www.hse.gov.uk/work-at-height/myths.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "ladders ... can be a sensible"
+    },
+    {
+      "label": "HSE-INDG401-HTML",
+      "url": "https://www.hse.gov.uk/pubns/indg401.htm",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "A brief guide"
+    },
+    {
+      "label": "HSE-INDG401-PDF",
+      "url": "https://www.hse.gov.uk/pubns/indg401.pdf",
+      "source_organisation": "Health and Safety Executive",
+      "retrieved_date": "2026-04-17",
+      "supporting_quote": "avoid, prevent, minimise"
+    }
+  ],
+  "related_courses": [
+    {
+      "title": "Work at Height Dutyholder Essentials",
+      "url": "https://higherself.ai/",
+      "provider": "Higher Self",
+      "audience": "Managers, supervisors, and dutyholders who commission or control work at height."
+    },
+    {
+      "title": "Risk Assessment for Site Work",
+      "url": "https://higherself.ai/",
+      "provider": "Higher Self",
+      "audience": "Teams that need practical decision-making on task planning, equipment choice, and rescue preparation."
+    },
+    {
+      "title": "Safe Ladder and Access Equipment Selection",
+      "url": "https://higherself.ai/",
+      "provider": "Higher Self",
+      "audience": "Front-line supervisors and competent persons selecting access methods for lower-duration work."
+    }
+  ],
+  "related_regulations": [
+    "construction-design-and-management-regulations-2015",
+    "provision-and-use-of-work-equipment-regulations-1998"
+  ],
+  "related_glossary_terms": [
+    "collective-protection",
+    "personal-protection",
+    "competent-person",
+    "fragile-surface"
+  ],
+  "provenance": {
+    "authored_by": "human",
+    "author_type": "human",
+    "reviewed_at": "2026-04-17T10:30:00Z",
+    "fact_check_passed": true
+  }
+}
