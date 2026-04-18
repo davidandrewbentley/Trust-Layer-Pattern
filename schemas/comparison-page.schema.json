@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Comparison Page",
+  "description": "Schema for a trust-first comparison page explaining the difference between adjacent options.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "title",
+    "items_compared",
+    "decision_summary",
+    "comparison_table",
+    "narrative_sections",
+    "related_courses",
+    "reviewed_by",
+    "last_updated",
+    "citations",
+    "provenance"
+  ],
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "description": "Kebab-case identifier used as the unique slug for this record.",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "reviewedBy": {
+      "type": "object",
+      "description": "Named expert reviewer responsible for the current published version.",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "title",
+        "credentials",
+        "organisation"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the reviewer."
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title or role of the reviewer."
+        },
+        "credentials": {
+          "type": "string",
+          "description": "Credentials that establish why this reviewer is qualified to sign the page."
+        },
+        "organisation": {
+          "type": "string",
+          "description": "Organisation the reviewer represents when signing the page."
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "description": "Primary or supporting source used to substantiate claims on the page.",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "url",
+        "source_organisation",
+        "retrieved_date",
+        "supporting_quote"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Short label used to reference the citation from body sections."
+        },
+        "url": {
+          "type": "string",
+          "description": "Working URL for the cited source.",
+          "format": "uri"
+        },
+        "source_organisation": {
+          "type": "string",
+          "description": "Organisation that published the source."
+        },
+        "retrieved_date": {
+          "type": "string",
+          "description": "Date the source was retrieved for checking.",
+          "format": "date"
+        },
+        "supporting_quote": {
+          "type": "string",
+          "description": "Short quotation or extract showing the relevant supporting language from the source.",
+          "minLength": 5,
+          "maxLength": 240
+        }
+      }
+    },
+    "courseRouting": {
+      "type": "object",
+      "description": "Course or offer route surfaced when a user needs next-step guidance.",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url",
+        "provider",
+        "audience"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Display title of the routed course or learning path."
+        },
+        "url": {
+          "type": "string",
+          "description": "Working URL for the routed offer.",
+          "format": "uri"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider responsible for delivering the course or pathway."
+        },
+        "audience": {
+          "type": "string",
+          "description": "Short description of the intended learner or buyer audience."
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Auditable record of authorship, review timing, and fact-check outcome.",
+      "additionalProperties": false,
+      "required": [
+        "authored_by",
+        "author_type",
+        "reviewed_at",
+        "fact_check_passed"
+      ],
+      "properties": {
+        "authored_by": {
+          "type": "string",
+          "description": "Name or role that authored the draft version of the page."
+        },
+        "author_type": {
+          "type": "string",
+          "description": "Whether the initial draft was produced by a human or an agent.",
+          "enum": [
+            "human",
+            "agent"
+          ]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "description": "Timestamp for the most recent completed human review.",
+          "format": "date-time"
+        },
+        "fact_check_passed": {
+          "type": "boolean",
+          "description": "Whether the page passed the hard fact-checking gate."
+        }
+      }
+    },
+    "tableRow": {
+      "type": "object",
+      "description": "One row of the comparison table.",
+      "additionalProperties": false,
+      "required": [
+        "criterion",
+        "left_value",
+        "right_value"
+      ],
+      "properties": {
+        "criterion": {
+          "type": "string",
+          "description": "Criterion used for comparison."
+        },
+        "left_value": {
+          "type": "string",
+          "description": "Value for the first compared item."
+        },
+        "right_value": {
+          "type": "string",
+          "description": "Value for the second compared item."
+        }
+      }
+    },
+    "narrativeSection": {
+      "type": "object",
+      "description": "Narrative section that expands on the comparison table.",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "paragraphs"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "Heading for the narrative comparison section."
+        },
+        "paragraphs": {
+          "type": "array",
+          "description": "Ordered paragraphs for the comparison narrative.",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "description": "One paragraph of explanatory comparison text."
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "slug": {
+      "$ref": "#/$defs/slug"
+    },
+    "title": {
+      "type": "string",
+      "description": "Comparison page title."
+    },
+    "items_compared": {
+      "type": "array",
+      "description": "Exactly two labels or names being compared.",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "description": "One compared item label."
+      }
+    },
+    "decision_summary": {
+      "type": "string",
+      "description": "Short decision-oriented summary shown above the table.",
+      "minLength": 140,
+      "maxLength": 320
+    },
+    "comparison_table": {
+      "type": "array",
+      "description": "Structured comparison rows used by the rendered table.",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/tableRow"
+      }
+    },
+    "narrative_sections": {
+      "type": "array",
+      "description": "Supporting narrative sections beneath the table.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/narrativeSection"
+      }
+    },
+    "related_courses": {
+      "type": "array",
+      "description": "Courses or routes that help the user act on the distinction.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/courseRouting"
+      }
+    },
+    "reviewed_by": {
+      "$ref": "#/$defs/reviewedBy"
+    },
+    "last_updated": {
+      "type": "string",
+      "description": "Date the comparison page was last updated.",
+      "format": "date"
+    },
+    "citations": {
+      "type": "array",
+      "description": "Sources used to support the comparison.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/citation"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  }
+}

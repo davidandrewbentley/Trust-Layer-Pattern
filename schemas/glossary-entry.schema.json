@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Glossary Entry",
+  "description": "Schema for a trust-first glossary entry with review, citations, and course routing.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "term",
+    "definition",
+    "seen_in_examples",
+    "related_terms",
+    "related_courses",
+    "reviewed_by",
+    "last_updated",
+    "citations",
+    "provenance"
+  ],
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "description": "Kebab-case slug used for cross-links.",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "reviewedBy": {
+      "type": "object",
+      "description": "Named expert reviewer responsible for the current published version.",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "title",
+        "credentials",
+        "organisation"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the reviewer."
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title or role of the reviewer."
+        },
+        "credentials": {
+          "type": "string",
+          "description": "Credentials that establish why this reviewer is qualified to sign the page."
+        },
+        "organisation": {
+          "type": "string",
+          "description": "Organisation the reviewer represents when signing the page."
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "description": "Primary or supporting source used to substantiate claims on the page.",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "url",
+        "source_organisation",
+        "retrieved_date",
+        "supporting_quote"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Short label used to reference the citation from body sections."
+        },
+        "url": {
+          "type": "string",
+          "description": "Working URL for the cited source.",
+          "format": "uri"
+        },
+        "source_organisation": {
+          "type": "string",
+          "description": "Organisation that published the source."
+        },
+        "retrieved_date": {
+          "type": "string",
+          "description": "Date the source was retrieved for checking.",
+          "format": "date"
+        },
+        "supporting_quote": {
+          "type": "string",
+          "description": "Short quotation or extract showing the relevant supporting language from the source.",
+          "minLength": 5,
+          "maxLength": 240
+        }
+      }
+    },
+    "courseRouting": {
+      "type": "object",
+      "description": "Course or offer route surfaced when a user needs next-step guidance.",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url",
+        "provider",
+        "audience"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Display title of the routed course or learning path."
+        },
+        "url": {
+          "type": "string",
+          "description": "Working URL for the routed offer.",
+          "format": "uri"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider responsible for delivering the course or pathway."
+        },
+        "audience": {
+          "type": "string",
+          "description": "Short description of the intended learner or buyer audience."
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Auditable record of authorship, review timing, and fact-check outcome.",
+      "additionalProperties": false,
+      "required": [
+        "authored_by",
+        "author_type",
+        "reviewed_at",
+        "fact_check_passed"
+      ],
+      "properties": {
+        "authored_by": {
+          "type": "string",
+          "description": "Name or role that authored the draft version of the page."
+        },
+        "author_type": {
+          "type": "string",
+          "description": "Whether the initial draft was produced by a human or an agent.",
+          "enum": [
+            "human",
+            "agent"
+          ]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "description": "Timestamp for the most recent completed human review.",
+          "format": "date-time"
+        },
+        "fact_check_passed": {
+          "type": "boolean",
+          "description": "Whether the page passed the hard fact-checking gate."
+        }
+      }
+    }
+  },
+  "properties": {
+    "term": {
+      "type": "string",
+      "description": "Canonical term being defined."
+    },
+    "acronym": {
+      "type": "string",
+      "description": "Optional acronym or abbreviation for the term."
+    },
+    "definition": {
+      "type": "string",
+      "description": "Citation-grade definition of the term.",
+      "minLength": 300,
+      "maxLength": 500
+    },
+    "regulatory_context": {
+      "type": "string",
+      "description": "Optional note on the framework or context where the term is used."
+    },
+    "seen_in_examples": {
+      "type": "array",
+      "description": "Short examples of where a reader may encounter the term.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Short example or use context."
+      }
+    },
+    "related_terms": {
+      "type": "array",
+      "description": "Cross-links to related glossary term slugs.",
+      "items": {
+        "$ref": "#/$defs/slug"
+      },
+      "uniqueItems": true
+    },
+    "related_courses": {
+      "type": "array",
+      "description": "Courses or learning paths surfaced from this term.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/courseRouting"
+      }
+    },
+    "reviewed_by": {
+      "$ref": "#/$defs/reviewedBy"
+    },
+    "last_updated": {
+      "type": "string",
+      "description": "Date the entry was last updated.",
+      "format": "date"
+    },
+    "citations": {
+      "type": "array",
+      "description": "Sources used to support the definition and context.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/citation"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  }
+}
