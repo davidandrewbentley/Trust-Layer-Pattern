@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this architecture, please cite it."
+title: "Trust-Layer-Pattern: Reference architecture for trust-first knowledge platforms"
+authors:
+  - family-names: "Bentley"
+    given-names: "David"
+    orcid: "https://orcid.org/0009-0000-6326-1644"
+url: "https://github.com/davidandrewbentley/Trust-Layer-Pattern"
+date-released: 2026-04-18
+license: MIT
+keywords:
+  - trust-layer
+  - knowledge-platforms
+  - ai-content-architecture
+  - regulated-industries
